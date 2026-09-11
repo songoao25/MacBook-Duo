@@ -1,0 +1,11 @@
+# macOS and Xcode/Swift build artifacts
+.DS_Store
+.build/
+DerivedData/
+*.app/
+*.dSYM/
+
+# Local editor and temporary files
+.swiftpm/
+.vscode/
+.idea/

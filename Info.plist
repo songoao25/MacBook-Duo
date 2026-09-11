@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>zh_CN</string>
+    <key>CFBundleExecutable</key>
+    <string>HingeGlass</string>
+    <key>CFBundleIdentifier</key>
+    <string>studio.prototype.HingeGlass.Global</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>MacBook Duo</string>
+    <key>CFBundleDisplayName</key>
+    <string>MacBook Duo</string>
+    <key>CFBundleIconFile</key>
+    <string>MacBookDuo</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.6</string>
+    <key>CFBundleVersion</key>
+    <string>6</string>
+    <key>NSScreenCaptureUsageDescription</key>
+    <string>实时捕获桌面，在屏幕开合时生成玻璃效果。内容仅在本机处理，不保存录像。</string>
+    <key>NSPrefersDisplaySafeAreaCompatibility</key>
+    <false/>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+</dict>
+</plist>
