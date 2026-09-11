@@ -21,7 +21,7 @@ MacBook Duo 是一款 macOS 桌面视觉实验软件。它根据 MacBook 铰链�
 
 [从 GitHub Releases 下载当前测试版](https://github.com/songoao25/MacBook-Duo/releases)
 
-Release 页面提供版本化的 `MacBook Duo.app.zip` 安装包资产。下载后解压即可得到 `MacBook Duo.app`。当前安装包为 Apple Silicon（`arm64`）测试版 0.6。由于使用临时的 ad-hoc 开发签名，Gatekeeper 可能拒绝打开；如果系统安全策略不接受安装包，请审阅源码后自行构建。
+Release 页面提供版本化的 `MacBook-Duo-<version>-macOS-arm64.zip` 安装包资产；当前文件名为 `MacBook-Duo-0.6.0-beta.1-macOS-arm64.zip`，解压后即可得到 `MacBook Duo.app`。当前安装包为 Apple Silicon（`arm64`）测试版 0.6。由于使用临时的 ad-hoc 开发签名，Gatekeeper 可能拒绝打开；如果系统安全策略不接受安装包，请审阅源码后自行构建。
 
 ## 功能
 
@@ -43,7 +43,7 @@ Release 页面提供版本化的 `MacBook Duo.app.zip` 安装包资产。下载�
 
 ## 安装与使用
 
-1. 从上面的 Release 页面下载 `MacBook Duo.app.zip` 并解压。
+1. 从上面的 Release 页面下载版本化的 `MacBook-Duo-<version>-macOS-arm64.zip` 并解压。
 2. 打开 `MacBook Duo.app`。
 3. 在截图模式导入完整桌面截图，点击“开始测试”。
 4. 调整模拟角度、深度和毛玻璃强度，按 `⌘K` 保存展开终点。

@@ -13,9 +13,9 @@
 
 - `build.sh` 固定目标 `arm64-apple-macosx15.0`，生成的 app bundle 和编译产物不提交。
 - `test.sh` 是不启动应用的轻量测试入口；源码或构建脚本变更后必须运行。
-- `MacBook Duo.app.zip` 只作为 GitHub Release 的版本化资产上传，不提交到仓库根目录、`dist/` 或其他源码目录；本地候选包应放在仓库外的临时目录或交付输出目录。
+- 安装包只作为 GitHub Release 的版本化资产上传，命名为 `MacBook-Duo-<version>-macOS-<arch>.zip`，不提交到仓库根目录、`dist/` 或其他源码目录；本地候选包应放在仓库外的临时目录或交付输出目录。
 - GitHub 的 `Code → Download ZIP` 负责源码快照，不能把源码压缩包和应用安装包混为同一个发行物。
-- 替换 Release 安装包时，必须重新校验 ZIP、架构、Info.plist、签名和 SHA-256，并在 Release 页面保留明确的版本标签。
+- 替换 Release 安装包时，必须重新校验 ZIP、架构、Info.plist、签名和 SHA-256，并在 Release 页面保留明确的版本标签；同一 Release 不重复上传不同命名的产品包。
 - 不把一次成功构建描述为真实设备、所有机型、Gatekeeper、公证或 App Store 验收。
 
 ## 贡献与安全
@@ -34,4 +34,4 @@
 2. 仓库可见性、默认分支和仓库 URL；
 3. 目标文件清单与下载链接；
 4. GitHub Actions 的 CI/CodeQL 状态；
-5. 若是安装包，Release 资产的下载链接、大小和 SHA-256。
+5. 若是安装包，Release 资产的规范文件名、下载链接、大小和 SHA-256。

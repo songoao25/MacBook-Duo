@@ -34,4 +34,8 @@ jobs:
           test "$(plutil -extract LSMinimumSystemVersion raw -o - Info.plist)" = "15.0"
           codesign --verify --deep --strict "MacBook Duo.app"
       - name: Verify distributable archive
-        run: unzip -t "MacBook Duo.app.zip"
+        run: |
+          package_dir="$(mktemp -d)"
+          package_path="$package_dir/MacBook-Duo-ci-macOS-arm64.zip"
+          ditto -c -k --sequesterRsrc --keepParent "MacBook Duo.app" "$package_path"
+          unzip -t "$package_path"

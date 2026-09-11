@@ -21,7 +21,7 @@ This repository contains the source snapshot, build scripts, tests, icons, and r
 
 [Download the current beta from GitHub Releases](https://github.com/songoao25/MacBook-Duo/releases)
 
-The release page contains `MacBook Duo.app.zip` as the versioned installation asset. The archive contains `MacBook Duo.app`; unzip it before opening. The current package is an Apple Silicon (`arm64`) beta build 0.6. Gatekeeper may reject this ad-hoc development signature; use the source build if you need a locally signed development app.
+The release page contains a versioned `MacBook-Duo-<version>-macOS-arm64.zip` installation asset. The current package is `MacBook-Duo-0.6.0-beta.1-macOS-arm64.zip`; it contains `MacBook Duo.app`. Unzip it before opening. The package is an Apple Silicon (`arm64`) beta build 0.6. Gatekeeper may reject this ad-hoc development signature; use the source build if you need a locally signed development app.
 
 ## Features
 
@@ -43,7 +43,7 @@ Screenshot-based manual simulation remains available when a hinge sensor is unav
 
 ## Install and use
 
-1. Download `MacBook Duo.app.zip` from the release page above and unzip it.
+1. Download the versioned `MacBook-Duo-<version>-macOS-arm64.zip` from the release page above and unzip it.
 2. Open `MacBook Duo.app`.
 3. In screenshot mode, import a full desktop screenshot and select **Start Test**.
 4. Adjust the simulated angle, depth, and frosted-glass strength. Press `⌘K` to save the preferred endpoint.
