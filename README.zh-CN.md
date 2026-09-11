@@ -4,6 +4,7 @@
 
 [![CI](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml)
+[![Release](https://img.shields.io/github/v/release/songoao25/MacBook-Duo?include_prereleases)](https://github.com/songoao25/MacBook-Duo/releases)
 [![最后提交](https://img.shields.io/github/last-commit/songoao25/MacBook-Duo)](https://github.com/songoao25/MacBook-Duo/commits/main)
 [![平台](https://img.shields.io/badge/平台-macOS%2015%2B-blue)](https://www.apple.com.cn/macos/)
 [![架构](https://img.shields.io/badge/架构-Apple%20Silicon%20%28arm64%29-6f42c1)](https://support.apple.com/zh-cn/116943)
@@ -14,13 +15,13 @@
 
 MacBook Duo 是一款 macOS 桌面视觉实验软件。它根据 MacBook 铰链角度，让桌面截图或实时桌面捕获产生透视、悬浮玻璃和毛玻璃过渡效果。
 
-本仓库包含源码快照、构建脚本、测试、图标以及可分发的开发版安装包。当前安装包不是正式签名或公证版本。
+本仓库包含源码快照、构建脚本、测试、图标和发布文档。可分发的开发版安装包作为 GitHub Release 资产发布；当前不是正式签名或公证版本。
 
 ## 下载
 
-[直接下载 MacBook Duo.app.zip](https://raw.githubusercontent.com/songoao25/MacBook-Duo/main/MacBook%20Duo.app.zip)
+[从 GitHub Releases 下载当前测试版](https://github.com/songoao25/MacBook-Duo/releases)
 
-下载后解压即可得到 `MacBook Duo.app`。当前安装包为 Apple Silicon（`arm64`）测试版 0.6。由于使用临时的 ad-hoc 开发签名，Gatekeeper 可能拒绝打开；如果系统安全策略不接受安装包，请审阅源码后自行构建。
+Release 页面提供版本化的 `MacBook Duo.app.zip` 安装包资产。下载后解压即可得到 `MacBook Duo.app`。当前安装包为 Apple Silicon（`arm64`）测试版 0.6。由于使用临时的 ad-hoc 开发签名，Gatekeeper 可能拒绝打开；如果系统安全策略不接受安装包，请审阅源码后自行构建。
 
 ## 功能
 
@@ -42,7 +43,7 @@ MacBook Duo 是一款 macOS 桌面视觉实验软件。它根据 MacBook 铰链�
 
 ## 安装与使用
 
-1. 下载上面的 ZIP 并解压。
+1. 从上面的 Release 页面下载 `MacBook Duo.app.zip` 并解压。
 2. 打开 `MacBook Duo.app`。
 3. 在截图模式导入完整桌面截图，点击“开始测试”。
 4. 调整模拟角度、深度和毛玻璃强度，按 `⌘K` 保存展开终点。

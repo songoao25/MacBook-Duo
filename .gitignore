@@ -5,6 +5,7 @@
 DerivedData/
 *.app/
 *.dSYM/
+*.app.zip
 
 # Local editor and temporary files
 .swiftpm/

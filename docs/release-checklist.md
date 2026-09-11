@@ -16,11 +16,13 @@
 - [ ] `file "MacBook Duo.app/Contents/MacOS/HingeGlass"` 确认 `arm64`
 - [ ] `plutil -extract LSMinimumSystemVersion raw -o - Info.plist` 返回 `15.0`
 - [ ] `git diff --check`
-- [ ] 如替换安装包，运行 `unzip -t "MacBook Duo.app.zip"` 并记录 SHA-256
+- [ ] 如替换安装包，从仓库外的候选包运行 `unzip -t "MacBook Duo.app.zip"` 并记录 SHA-256；不要把候选包提交到 `main`
 
 ## 远程发布
 
 - [ ] 先审阅精确的 staged 文件清单和 diff。
 - [ ] 推送后回读远程 commit SHA、作者、仓库可见性、文件清单和 Actions 状态。
-- [ ] Raw 下载链接返回 ZIP，而不是 HTML 或错误页。
+- [ ] 为安装包创建明确的版本化 GitHub Release（测试版使用 prerelease），并将 `MacBook Duo.app.zip` 作为唯一产品安装包资产上传。
+- [ ] Release 资产下载链接返回 ZIP，而不是 HTML 或错误页；记录资产大小和 SHA-256。
+- [ ] 源码通过仓库树和 GitHub 自动生成的 Source code ZIP 提供，不重复上传源码压缩包。
 - [ ] 未宣称公证、App Store 上架或所有机型兼容，除非有独立证据。

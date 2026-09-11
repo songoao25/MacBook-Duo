@@ -4,6 +4,7 @@
 
 [![CI](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml)
+[![Release](https://img.shields.io/github/v/release/songoao25/MacBook-Duo?include_prereleases)](https://github.com/songoao25/MacBook-Duo/releases)
 [![Last commit](https://img.shields.io/github/last-commit/songoao25/MacBook-Duo)](https://github.com/songoao25/MacBook-Duo/commits/main)
 [![Platform](https://img.shields.io/badge/platform-macOS%2015%2B-blue)](https://www.apple.com/macos/)
 [![Architecture](https://img.shields.io/badge/architecture-Apple%20Silicon%20%28arm64%29-6f42c1)](https://support.apple.com/en-us/116943)
@@ -14,13 +15,13 @@
 
 MacBook Duo is an experimental macOS desktop visual app. It uses a MacBook hinge angle to animate perspective, floating-glass, and frosted-glass effects over a desktop screenshot or a live desktop capture.
 
-This repository contains the source snapshot, build scripts, tests, icons, and the distributable development build. It is not a production-signed or notarized application.
+This repository contains the source snapshot, build scripts, tests, icons, and release documentation. The distributable development build is published as a GitHub Release asset; it is not a production-signed or notarized application.
 
 ## Download
 
-[Download MacBook Duo.app.zip](https://raw.githubusercontent.com/songoao25/MacBook-Duo/main/MacBook%20Duo.app.zip)
+[Download the current beta from GitHub Releases](https://github.com/songoao25/MacBook-Duo/releases)
 
-The archive contains `MacBook Duo.app`. Unzip it before opening. The current package is an Apple Silicon (`arm64`) beta build 0.6. Gatekeeper may reject this ad-hoc development signature; use the source build if you need a locally signed development app.
+The release page contains `MacBook Duo.app.zip` as the versioned installation asset. The archive contains `MacBook Duo.app`; unzip it before opening. The current package is an Apple Silicon (`arm64`) beta build 0.6. Gatekeeper may reject this ad-hoc development signature; use the source build if you need a locally signed development app.
 
 ## Features
 
@@ -42,7 +43,7 @@ Screenshot-based manual simulation remains available when a hinge sensor is unav
 
 ## Install and use
 
-1. Download the ZIP above and unzip it.
+1. Download `MacBook Duo.app.zip` from the release page above and unzip it.
 2. Open `MacBook Duo.app`.
 3. In screenshot mode, import a full desktop screenshot and select **Start Test**.
 4. Adjust the simulated angle, depth, and frosted-glass strength. Press `⌘K` to save the preferred endpoint.
