@@ -1,52 +1,117 @@
-# Hinge Glass 04
+# MacBook Duo
 
-作者：江灵夏草（JLXC）
+[![CI](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml)
+[![Platform](https://img.shields.io/badge/platform-macOS%2015%2B-blue)](https://www.apple.com/macos/)
+[![Architecture](https://img.shields.io/badge/architecture-Apple%20Silicon%20%28arm64%29-6f42c1)](https://support.apple.com/en-us/116943)
+[![Status](https://img.shields.io/badge/status-beta%200.6-orange)](CHANGELOG.md)
+[![License: not specified](https://img.shields.io/badge/license-not%20specified-lightgrey)](docs/license-status.md)
 
-## 下载
+> Author: 江灵夏草（JLXC）
 
-[下载 MacBook Duo.app.zip](https://raw.githubusercontent.com/songoao25/MacBook-Duo/main/MacBook%20Duo.app.zip)
+MacBook Duo is an experimental macOS desktop visual app. It uses a MacBook hinge angle to animate perspective, floating-glass, and frosted-glass effects over a desktop screenshot or a live desktop capture.
 
-下载后解压即可得到 `MacBook Duo.app`。当前安装包为 Apple Silicon（arm64）测试版 0.6。
+This repository contains the source snapshot, build scripts, tests, icons, and the distributable development build. It is not a production-signed or notarized application.
 
-启动即为整屏无边框窗口，覆盖刘海两侧的区域。截图铺满显示，不同比例的截图会裁去少量边缘。效果从 0° 连续展开至保存的终点角度，之后保持清晰。默认终点 120°；保存值在重新启动后保留。实际合盖到 0° 时系统可能关闭显示屏，可用手动模式验证。
+## Download
 
-将整张桌面截图视为固定在空间中的界面。MacBook 屏幕绕底部铰链转动时，Metal 逐像素计算视线穿过屏幕后在内容平面上的交点，并根据屏幕与内容的间距生成渐变磨砂效果。
+[Download MacBook Duo.app.zip](https://raw.githubusercontent.com/songoao25/MacBook-Duo/main/MacBook%20Duo.app.zip)
 
-## 使用
+The archive contains `MacBook Duo.app`. Unzip it before opening. The current package is an Apple Silicon (`arm64`) beta build 0.6. Gatekeeper may reject this ad-hoc development signature; use the source build if you need a locally signed development app.
 
-1. 打开 Hinge Glass.app，导入完整桌面截图，点击开始测试。
-2. 将屏幕打开到舒适的观看位置，按 ⌘K 或点击「保存展开终点」。
-3. 缓慢将屏幕向前倾斜 15–35°。顶部的透视和虚化最明显，靠近底部铰链的内容更清晰。
-4. 可调节「深度强度」「磨砂」，或开启「原图对比」查看差别。
-5. 关闭「实时铰链」后可用滑杆模拟。此时保存的是模拟角度。
+## Features
 
-## 快捷键
+- Screenshot preview with manual hinge-angle simulation.
+- Live desktop mode using ScreenCaptureKit and Metal.
+- Hinge sensor input when the MacBook model exposes a compatible HID path.
+- Saved open-angle calibration and keyboard shortcuts.
+- Local image processing; the app does not upload desktop frames or write a video recording.
+- Global overlay mode that can be enabled or stopped from the menu bar.
 
-- ⌘H：隐藏／恢复控制界面，再按一次切换回来，不隐藏整个 App。
-- Esc：显示控制界面。
-- ⌘K：保存当前角度为展开终点（至少 1°，以免形成零长度范围）。
-- ⌘B：切换原图对比。
-- ⌘Q：退出软件。
+## Requirements
 
-快捷键在测试页有效，不依赖按钮焦点。文件选择对话框保留系统默认键盘行为。
+- macOS 15.0 or later.
+- Apple Silicon Mac (`arm64`).
+- A Mac with Metal support.
+- Live mode is intended for the built-in MacBook display and is not guaranteed on every model.
 
-当前版本用固定观察点模拟空间深度，没有头部跟踪。保持头部大致不动并正对内建屏幕观看效果较好。单张截图仍然是一个内容平面，不会自动分离其中每个窗口。所有图像处理都在本机进行。
+Screenshot-based manual simulation remains available when a hinge sensor is unavailable.
 
-## 参考与实现
+## Install and use
 
-- 实拍参考：https://weibo.com/2/detail/5341559961948752 （页面与封面可访问；开发时网页播放器未成功播放，未逐帧核验）
-- 公开复刻的投影模型：https://github.com/Atomicx7/Duo-animation
-- 该项目所注明的 Swift 原型：elijah-semyonov/DuoLikeAnimation
-- 铰链 HID 读取参考：https://github.com/samhenrigold/LidAngleSensor
+1. Download the ZIP above and unzip it.
+2. Open `MacBook Duo.app`.
+3. In screenshot mode, import a full desktop screenshot and select **Start Test**.
+4. Adjust the simulated angle, depth, and frosted-glass strength. Press `⌘K` to save the preferred endpoint.
+5. For live mode, grant Screen Recording permission when macOS asks. Frames are processed locally.
 
-本项目独立实现 Metal 渲染器，将参考模型的竖直铰链改为 MacBook 的底部水平铰链。截图按比例铺满屏幕。传感器数据以 30Hz 读取，GPU 对角度进行时间平滑，停止变化后暂停绘制。
+The distributed app is a development build with an ad-hoc signature. Review the source and build it locally when Gatekeeper or your security policy does not accept the downloaded package.
 
-需要 macOS 14+ 和支持 Metal 的 Mac。HID 接口为未公开传感器通路，机型支持情况可能不同。
+## Shortcuts
 
-## 构建
+| Shortcut | Action |
+| --- | --- |
+| `⌘H` | Hide or restore screenshot-mode controls |
+| `Esc` | Show screenshot-mode controls |
+| `⌘K` | Save the current angle as the open endpoint |
+| `⌘B` | Toggle original-image comparison |
+| `⌘Q` | Quit |
+| `⌘⇧G` | Toggle live desktop effect |
+| `⌘⇧K` | Save the live hinge endpoint |
+| `⌘⇧Esc` | Stop live mode and return to settings |
 
-安装 Apple Command Line Tools 后运行 ./build.sh。无需完整 Xcode：Metal 源码在 App 启动时由系统编译。生成的 App 为本机签名的开发原型。
+## Build from source
 
-## 验证
+Install Apple Command Line Tools, then run:
 
-已在当前 Mac 编译并启动新版，检查了测试页的实际 GPU 输出：整张截图发生投影变化，上方内容出现景深模糊，下方 Dock 保持相对清晰。真实物理观看时的空间错觉仍需使用者配合开合屏幕体验。
+```sh
+./test.sh
+./build.sh
+open "MacBook Duo.app"
+```
+
+There is intentionally no Xcode project or third-party dependency. `build.sh` invokes the system Swift compiler, targets `arm64-apple-macosx15.0`, copies the app resources, and applies an ad-hoc local signature. `test.sh` compiles and runs the permission-migration test without launching the app or changing Screen Recording permission.
+
+## Project layout
+
+| Path | Purpose |
+| --- | --- |
+| `Sources/` | SwiftUI/AppKit UI, Metal rendering, live capture, and hinge sensor code |
+| `Tests/` | Permission-preparation executable test |
+| `Assets/` | App icon and design notes |
+| `Info.plist` | Bundle metadata and privacy usage description |
+| `build.sh` | Reproducible local app build entry point |
+| `test.sh` | Lightweight source test entry point |
+| `GLOBAL-README.md` | Live global-overlay mode notes |
+| `PERMISSIONS.md` | Screen Recording permission migration notes |
+| `docs/` | License, repository, and release-maintainer guidance |
+
+## Privacy and permissions
+
+Live mode requires the user to grant Screen Recording access. The current implementation uses ScreenCaptureKit and Metal locally; source comments and documentation state that frames are not sent over the network and are not saved as a video. Calibration values are stored in the app's local `UserDefaults` domain.
+
+The permission-preparation helper resets only this app's own Screen Recording entry once per code identity. It is a development-build migration aid, not an authorization bypass. See [PERMISSIONS.md](PERMISSIONS.md).
+
+## Known limitations
+
+- Hinge HID support varies by MacBook model.
+- Live mode is designed for the built-in display and has not been validated against every full-screen app, Space, protected video surface, or external monitor.
+- The downloaded app is ad hoc signed and not notarized.
+- The project has no open-source license at this time; see [the license status](docs/license-status.md).
+
+## References and attribution
+
+The renderer is an independent implementation. Development references are listed in the source documentation and include [Duo-animation](https://github.com/Atomicx7/Duo-animation) and [LidAngleSensor](https://github.com/samhenrigold/LidAngleSensor). Their licenses and notices remain the responsibility of anyone making a derivative work.
+
+## Repository guidance
+
+- [中文 README](README.zh-CN.md)
+- [Contributing guide](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
+- [Support guide](SUPPORT.md)
+- [Agent instructions](AGENTS.md)
+- [Release checklist](docs/release-checklist.md)
+
+## License and author
+
+Copyright © 2026 江灵夏草（JLXC）. This repository does not currently grant a new open-source license. Do not redistribute, relicense, or reuse the source as an open-source project without the author's separate permission.

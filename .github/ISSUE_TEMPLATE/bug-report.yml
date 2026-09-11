@@ -1,0 +1,54 @@
+name: Bug report
+description: Report a reproducible problem with MacBook Duo.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach desktop screenshots, credentials, permission databases, or unredacted local paths.
+  - type: input
+    id: version
+    attributes:
+      label: App version or commit
+      placeholder: "0.6 or commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: macOS and Mac model
+      placeholder: "macOS 15.x, MacBook Pro M-series"
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Screenshot preview
+        - Live desktop
+        - Build or installation
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Include the smallest sequence that reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed screenshots, credentials, private paths, and sensitive logs.
+          required: true

@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Show toolchain
+        run: |
+          sw_vers
+          swift --version
+      - name: Check repository formatting
+        run: git diff --check
+      - name: Run permission test
+        run: ./test.sh
+      - name: Build app
+        run: ./build.sh
+      - name: Verify app bundle
+        run: |
+          test -x "MacBook Duo.app/Contents/MacOS/HingeGlass"
+          file "MacBook Duo.app/Contents/MacOS/HingeGlass" | grep -q 'arm64'
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - Info.plist)" = "15.0"
+          codesign --verify --deep --strict "MacBook Duo.app"
+      - name: Verify distributable archive
+        run: unzip -t "MacBook Duo.app.zip"

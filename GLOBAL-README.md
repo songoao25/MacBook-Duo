@@ -1,8 +1,8 @@
-# Hinge Glass Global 0.5
+# MacBook Duo — Global Overlay Notes (0.6)
 
 全屏覆盖修订：覆盖层改为不抢焦点的 NSPanel，并设置 canJoinAllApplications、canJoinAllSpaces 和 fullScreenAuxiliary，层级提高到 statusBar + 1，目标是支持其他应用的原生全屏空间，并遮住真实 Dock/菜单栏以避免重复。已编译并启动；本次重编译后系统返回 TCC 权限拒绝，全屏场景尚未完成实测。⌘⇧Esc 紧急停止仍保留。
 
-打开 Hinge Glass Global.app，点击「启用实时桌面效果」。首次需要在系统设置 → 隐私与安全性 → 屏幕与系统音频录制（名称随系统版本略有区别）允许 Hinge Glass Global。授权后若系统要求退出重开，请照做。
+打开 MacBook Duo.app，点击「启用实时桌面效果」。首次需要在系统设置 → 隐私与安全性 → 屏幕与系统音频录制（名称随系统版本略有区别）允许 MacBook Duo。授权后若系统要求退出重开，请照做。
 
 - ⌘⇧G：开启 / 停止全局模式。
 - ⌘⇧K：将当前真实铰链角度保存为展开终点。
@@ -24,4 +24,4 @@
 
 可点击「先测试 8 秒」或菜单栏「测试实时效果（8秒）」验证渲染，无需移动屏幕。结束后回到实际铰链角度控制；若角度仍低于终点，效果会继续显示。菜单栏状态显示捕获帧数、终点角度，以及当前是否显示效果。
 
-旧版独立保留在同级 HingeGlass-v04 目录，另有 HingeGlass-v04.zip 备份。全局版使用独立 Bundle ID，可从旧版读取已有校准值，后续保存互不覆盖。
+当前源码快照只保留 MacBook Duo 0.6 实现；历史 HingeGlass-v04 目录和 ZIP 不包含在本仓库。全局覆盖层使用独立 Bundle ID，可读取旧版校准值，后续保存互不覆盖。

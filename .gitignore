@@ -1,6 +1,7 @@
 # macOS and Xcode/Swift build artifacts
 .DS_Store
 .build/
+.test-build/
 DerivedData/
 *.app/
 *.dSYM/

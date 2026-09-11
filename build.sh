@@ -5,6 +5,7 @@ PROJECT_DIR="${0:A:h}"
 APP_DIR="$PROJECT_DIR/MacBook Duo.app"
 CONTENTS_DIR="$APP_DIR/Contents"
 MACOS_DIR="$CONTENTS_DIR/MacOS"
+TARGET_TRIPLE="arm64-apple-macosx15.0"
 
 mkdir -p "$MACOS_DIR"
 mkdir -p "$CONTENTS_DIR/Resources"
@@ -15,6 +16,7 @@ cp "$PROJECT_DIR/Info.plist" "$CONTENTS_DIR/Info.plist"
 swiftc \
   -parse-as-library \
   -O \
+  -target "$TARGET_TRIPLE" \
   -framework SwiftUI \
   -framework AppKit \
   -framework IOKit \
