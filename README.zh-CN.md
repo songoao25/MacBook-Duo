@@ -1,7 +1,10 @@
 # MacBook Duo
 
+[English](README.md) · **简体中文**
+
 [![CI](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/songoao25/MacBook-Duo/actions/workflows/codeql.yml)
+[![最后提交](https://img.shields.io/github/last-commit/songoao25/MacBook-Duo)](https://github.com/songoao25/MacBook-Duo/commits/main)
 [![平台](https://img.shields.io/badge/平台-macOS%2015%2B-blue)](https://www.apple.com.cn/macos/)
 [![架构](https://img.shields.io/badge/架构-Apple%20Silicon%20%28arm64%29-6f42c1)](https://support.apple.com/zh-cn/116943)
 [![状态](https://img.shields.io/badge/状态-测试版%200.6-orange)](CHANGELOG.md)
