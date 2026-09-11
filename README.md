@@ -2,6 +2,12 @@
 
 作者：江灵夏草（JLXC）
 
+## 下载
+
+[下载 MacBook Duo.app.zip](https://raw.githubusercontent.com/songoao25/MacBook-Duo/main/MacBook%20Duo.app.zip)
+
+下载后解压即可得到 `MacBook Duo.app`。当前安装包为 Apple Silicon（arm64）测试版 0.6。
+
 启动即为整屏无边框窗口，覆盖刘海两侧的区域。截图铺满显示，不同比例的截图会裁去少量边缘。效果从 0° 连续展开至保存的终点角度，之后保持清晰。默认终点 120°；保存值在重新启动后保留。实际合盖到 0° 时系统可能关闭显示屏，可用手动模式验证。
 
 将整张桌面截图视为固定在空间中的界面。MacBook 屏幕绕底部铰链转动时，Metal 逐像素计算视线穿过屏幕后在内容平面上的交点，并根据屏幕与内容的间距生成渐变磨砂效果。
